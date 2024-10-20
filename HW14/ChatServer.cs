@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading;
+
 namespace HW14
 {
 
     public class ChatServer
     {
         private TcpListener tcpListener;
-        private List<ClientHandler> clients = new List<ClientHandler>();
-        private string historyFile = "chat_history.txt";
+        public List<ClientHandler> clients = new List<ClientHandler>();
+        private string historyFile = "history.txt";
         private UdpClient udpListener;
         private List<IPEndPoint> knownServers = new List<IPEndPoint>();
 
